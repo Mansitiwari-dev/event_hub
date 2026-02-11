@@ -1,6 +1,6 @@
-# Event Hub - Complete Event Management Platform
+# EventHub - Complete Event Management Platform
 
-A production-ready Laravel 10 event management system with multi-role support, vendor marketplace, team building, reviews, and messaging features.
+A comprehensive Laravel 12 event management system with multi-role support, vendor marketplace, team building, reviews, and messaging features.
 
 ## 🎉 Features
 
@@ -37,20 +37,22 @@ A production-ready Laravel 10 event management system with multi-role support, v
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Laravel 10
-- **PHP Version**: 8.x
+- **Framework**: Laravel 12
+- **PHP Version**: 8.2+
 - **Database**: MySQL 5.7+
-- **Frontend**: Tailwind CSS, Blade Templates
+- **Frontend**: Tailwind CSS, Bootstrap 5, Blade Templates
 - **Authentication**: Laravel Auth
 - **Authorization**: Policies & Gates
 - **File Storage**: Laravel Storage (Portfolio images)
+- **Asset Compilation**: Vite
 
 ## 🚀 Installation & Setup
 
 ### Prerequisites
-- PHP 8.0+
+- PHP 8.2+
 - MySQL 5.7+
 - Composer
+- Node.js & npm (for Vite asset compilation)
 
 ### Quick Start
 
@@ -62,12 +64,13 @@ cd c:\xampp\htdocs\Event_hub
 2. **Install dependencies**
 ```bash
 composer install
+npm install
 ```
 
 3. **Configure environment**
 ```bash
 # Copy .env file (or use existing)
-cp .env.example .env
+copy .env.example .env
 
 # Set APP_KEY
 php artisan key:generate
@@ -80,12 +83,18 @@ php artisan key:generate
 php artisan migrate:fresh --seed
 ```
 
-5. **Start the development server**
+5. **Compile assets**
+```bash
+npm run dev
+# or for production: npm run build
+```
+
+6. **Start the development server**
 ```bash
 php artisan serve
 ```
 
-6. **Access the application**
+7. **Access the application**
 ```
 http://localhost:8000
 ```
@@ -333,8 +342,28 @@ php artisan storage:link
 
 ---
 
-### Version: 2.0.0
-### Last Updated: 2024
+## 🔧 Recent Updates & Fixes
+
+### Dashboard CSS Issues Fixed
+- ✅ Fixed missing CSS on organizer and admin dashboards
+- ✅ Updated Vite configuration for proper asset compilation
+- ✅ Added proper Bootstrap 5 integration
+- ✅ Resolved JavaScript errors from browser extensions
+
+### Form Submission Improvements
+- ✅ Fixed event edit form submission with proper enctype
+- ✅ Added AJAX form handling with loading states
+- ✅ Improved error handling and user feedback
+- ✅ Enhanced form validation and success notifications
+
+### Asset Management
+- ✅ Proper Vite setup for Laravel 12
+- ✅ CSS and JS compilation through npm
+- ✅ Asset optimization for production
+- ✅ Clear separation of development and production builds
+
+### Version: 2.1.0
+### Last Updated: February 2026
 ### Status: Production Ready ✅
 
 For detailed setup instructions, see [SETUP_GUIDE.md] or run `php artisan serve`
